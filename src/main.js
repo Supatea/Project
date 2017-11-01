@@ -3,8 +3,24 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import BootstrapVue from 'bootstrap-vue'
+import firebase from 'firebase'
+
+Vue.use(BootstrapVue);
+
 
 Vue.config.productionTip = false
+
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDJW2j4cbUW9NSWvL3jixjWXotI-zz79Zc",
+  authDomain: "rosite-b860a.firebaseapp.com",
+  databaseURL: "https://rosite-b860a.firebaseio.com",
+  projectId: "rosite-b860a",
+  storageBucket: "",
+  messagingSenderId: "384343150814"
+};
+firebase.initializeApp(config);
 
 /* eslint-disable no-new */
 new Vue({

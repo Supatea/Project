@@ -1,0 +1,54 @@
+@mixin ts($Xpx,$textColor)
+	text-shadow: $Xpx 0px 0px $textColor
+@mixin bdr($radius)
+	border-radius: $radius
+	-webkit-border-radius: $radius
+	-moz-border-radius: $radius
+	-ms-border-radius: $radius
+	-o-border-radius: $radius
+@mixin lh($lineheight)
+	line-height: $lineheight
+@mixin fzXL
+	font-size: 5.250rem
+	//84
+@mixin fzL
+	font-size: 4.000rem
+	//64
+@mixin fzM
+	font-size: 2.250rem
+	//36
+@mixin fzS
+	font-size: 1.5rem
+	//24
+@mixin fzSll
+	font-size: 1.375rem
+	//22
+@mixin fzSl
+	font-size: 1.313rem
+	//21
+@mixin fzSml
+	font-size: 1.250rem
+	//20	
+@mixin fzSm
+	font-size: 1.125rem
+	//18
+@mixin fzSms
+	font-size: 1.063rem
+	//17
+@mixin fz1
+	font-size: 1rem
+	//16
+@mixin fzSs
+	font-size: 0.938rem
+	//15
+@mixin fzSss
+	font-size: 0.875rem
+	//14
+@mixin fzSsss
+	font-size: 0.813rem
+	//13
+@mixin fzSssss
+	font-size: 0.750rem
+	//12
+@mixin toEm($pixels, $context: 16)
+	font-size: ($pixels/$context)+rem
