@@ -10,8 +10,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HelloWorld
+      name: 'EndlessTower',
+      component: EndlessTower
     },
     {
       path: '/EndlessTower',
