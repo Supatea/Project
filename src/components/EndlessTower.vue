@@ -1,7 +1,32 @@
 <template>
     <div>
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Modal Heading</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Modal body..
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container-fluid first-block">
             <div class="row">
+                <div class="col-lg-12 col-md-12 col-xs-12">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                        Open modal
+                    </button>
+                </div>
                 <div class="col-lg-12 col-md-12 col-xs-12">
                     <div class="input-group">
                         <span class="input-group-btn">
@@ -12,7 +37,7 @@
                 </div>
             </div>
             <div class="table-responsive">
-                <table class="table table-striped">
+                <table class="table table-striped table-bordered table-hover">
                     <thead>
                         <tr>
                             <th></th>
@@ -33,9 +58,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="item in filtered_post" v-bind:allRoute="p" v-bind:catas="catas">
-                            <td>{{item.serverName}}</td>
-                            <td v-for="boss in item.bossList">{{boss.name}}</td>
+                        <tr v-for="p in filtered_post" v-bind:allRoute="p">
+                            <td>{{p.serverName}}</td>
+                            <td v-for="item in p.bossList">
+                                <span v-if="item.show">{{item.name}}</span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -53,74 +80,74 @@ export default {
             allRoute: [{
                 "serverName": "1a",
                 "bossList": [
-                    { "floor": "F03", "name": "狸貓" },
-                    { "floor": "F06", "name": "狸貓" },
-                    { "floor": "F10", "name": "天使波利" },
-                    { "floor": "F13", "name": "幽靈波利" },
-                    { "floor": "F16", "name": "直升機哥布林" },
-                    { "floor": "F20", "name": "天使波利" },
-                    { "floor": "F23", "name": "藍瘋兔" },
-                    { "floor": "F26", "name": "藍瘋兔" },
-                    { "floor": "F30", "name": "皮里恩" },
-                    { "floor": "F33", "name": "幽靈波利" },
-                    { "floor": "F36", "name": "龍蠅" },
-                    { "floor": "F40", "name": "蟻后" },
-                    { "floor": "F43", "name": "直升機哥布林" },
-                    { "floor": "F46", "name": "狸貓" },
+                    { "show": true, "floor": "F03", "name": "狸貓" },
+                    { "show": true, "floor": "F06", "name": "狸貓" },
+                    { "show": true, "floor": "F10", "name": "天使波利" },
+                    { "show": true, "floor": "F13", "name": "幽靈波利" },
+                    { "show": true, "floor": "F16", "name": "直升機哥布林" },
+                    { "show": true, "floor": "F20", "name": "天使波利" },
+                    { "show": true, "floor": "F23", "name": "藍瘋兔" },
+                    { "show": true, "floor": "F26", "name": "藍瘋兔" },
+                    { "show": true, "floor": "F30", "name": "皮里恩" },
+                    { "show": true, "floor": "F33", "name": "幽靈波利" },
+                    { "show": true, "floor": "F36", "name": "龍蠅" },
+                    { "show": true, "floor": "F40", "name": "蟻后" },
+                    { "show": true, "floor": "F43", "name": "直升機哥布林" },
+                    { "show": true, "floor": "F46", "name": "狸貓" },
                 ]
             }, {
                 "serverName": "2b",
                 "bossList": [
-                    { "floor": "F03", "name": "天使波利" },
-                    { "floor": "F06", "name": "狸貓" },
-                    { "floor": "F10", "name": "狸貓" },
-                    { "floor": "F13", "name": "皮里恩" },
-                    { "floor": "F16", "name": "天使波利" },
-                    { "floor": "F20", "name": "幽靈波利" },
-                    { "floor": "F23", "name": "龍蠅" },
-                    { "floor": "F26", "name": "藍瘋兔" },
-                    { "floor": "F30", "name": "幽靈波利" },
-                    { "floor": "F33", "name": "狸貓" },
-                    { "floor": "F36", "name": "藍瘋兔" },
-                    { "floor": "F40", "name": "直升機哥布林" },
-                    { "floor": "F43", "name": "蟻后" },
-                    { "floor": "F46", "name": "直升機哥布林" },
+                    { "show": true, "floor": "F03", "name": "天使波利" },
+                    { "show": true, "floor": "F06", "name": "狸貓" },
+                    { "show": true, "floor": "F10", "name": "狸貓" },
+                    { "show": true, "floor": "F13", "name": "皮里恩" },
+                    { "show": true, "floor": "F16", "name": "天使波利" },
+                    { "show": true, "floor": "F20", "name": "幽靈波利" },
+                    { "show": true, "floor": "F23", "name": "龍蠅" },
+                    { "show": true, "floor": "F26", "name": "藍瘋兔" },
+                    { "show": true, "floor": "F30", "name": "幽靈波利" },
+                    { "show": true, "floor": "F33", "name": "狸貓" },
+                    { "show": true, "floor": "F36", "name": "藍瘋兔" },
+                    { "show": true, "floor": "F40", "name": "直升機哥布林" },
+                    { "show": true, "floor": "F43", "name": "蟻后" },
+                    { "show": true, "floor": "F46", "name": "直升機哥布林" },
                 ]
             }, {
                 "serverName": "3f",
                 "bossList": [
-                    { "floor": "F03", "name": "狸貓" },
-                    { "floor": "F06", "name": "幽靈波利" },
-                    { "floor": "F10", "name": "直升機哥布林" },
-                    { "floor": "F13", "name": "天使波利" },
-                    { "floor": "F16", "name": "藍瘋兔" },
-                    { "floor": "F20", "name": "天使波利" },
-                    { "floor": "F23", "name": "狸貓" },
-                    { "floor": "F26", "name": "幽靈波利" },
-                    { "floor": "F30", "name": "龍蠅" },
-                    { "floor": "F33", "name": "蟻后" },
-                    { "floor": "F36", "name": "狸貓" },
-                    { "floor": "F40", "name": "藍瘋兔" },
-                    { "floor": "F43", "name": "皮里恩" },
-                    { "floor": "F46", "name": "直升機哥布林" },
+                    { "show": true, "floor": "F03", "name": "狸貓" },
+                    { "show": true, "floor": "F06", "name": "幽靈波利" },
+                    { "show": true, "floor": "F10", "name": "直升機哥布林" },
+                    { "show": true, "floor": "F13", "name": "天使波利" },
+                    { "show": true, "floor": "F16", "name": "藍瘋兔" },
+                    { "show": true, "floor": "F20", "name": "天使波利" },
+                    { "show": true, "floor": "F23", "name": "狸貓" },
+                    { "show": true, "floor": "F26", "name": "幽靈波利" },
+                    { "show": true, "floor": "F30", "name": "龍蠅" },
+                    { "show": true, "floor": "F33", "name": "蟻后" },
+                    { "show": true, "floor": "F36", "name": "狸貓" },
+                    { "show": true, "floor": "F40", "name": "藍瘋兔" },
+                    { "show": true, "floor": "F43", "name": "皮里恩" },
+                    { "show": true, "floor": "F46", "name": "直升機哥布林" },
                 ]
             }, {
                 "serverName": "4g",
                 "bossList": [
-                    { "floor": "F03", "name": "狸貓" },
-                    { "floor": "F06", "name": "天使波利" },
-                    { "floor": "F10", "name": "幽靈波利" },
-                    { "floor": "F13", "name": "直升機哥布林" },
-                    { "floor": "F16", "name": "狸貓" },
-                    { "floor": "F20", "name": "藍瘋兔" },
-                    { "floor": "F23", "name": "藍瘋兔" },
-                    { "floor": "F26", "name": "天使波利" },
-                    { "floor": "F30", "name": "幽靈波利" },
-                    { "floor": "F33", "name": "狸貓" },
-                    { "floor": "F36", "name": "直升機哥布林" },
-                    { "floor": "F40", "name": "龍蠅" },
-                    { "floor": "F43", "name": "蟻后" },
-                    { "floor": "F46", "name": "皮里恩" },
+                    { "show": true, "floor": "F03", "name": "哥吉拉" },
+                    { "show": true, "floor": "F06", "name": "天使波利" },
+                    { "show": true, "floor": "F10", "name": "幽靈波利" },
+                    { "show": true, "floor": "F13", "name": "直升機哥布林" },
+                    { "show": true, "floor": "F16", "name": "哥吉拉" },
+                    { "show": true, "floor": "F20", "name": "藍瘋兔" },
+                    { "show": true, "floor": "F23", "name": "藍瘋兔" },
+                    { "show": true, "floor": "F26", "name": "天使波利" },
+                    { "show": true, "floor": "F30", "name": "幽靈波利" },
+                    { "show": true, "floor": "F33", "name": "哥吉拉" },
+                    { "show": true, "floor": "F36", "name": "直升機哥布林" },
+                    { "show": true, "floor": "F40", "name": "龍蠅" },
+                    { "show": true, "floor": "F43", "name": "蟻后" },
+                    { "show": true, "floor": "F46", "name": "哥吉拉" },
                 ]
             }]
         }
@@ -129,16 +156,22 @@ export default {
         filtered_post() {
             return this.allRoute
                 .filter((p) => {
-                    var field = ["serverName"];
+                    var self = this;
+                    var field = p.bossList;
                     var contain_flag = false;
                     field.forEach((f) => {
-                        if (p[f].toLowerCase().indexOf(this.filter.toLowerCase()) != -1)
+                        var m = f.name;
+                        if (m.indexOf(self.filter) == -1) {
+                            f.show = false;
+                        } else {
+                            f.show = true;
+                        }
+                        if (m.indexOf(self.filter) != -1) {
                             contain_flag = true;
+                        }
                     });
                     return contain_flag;
                 })
-            console.log(cache.tag);
-            return cache;
         }
     },
     mounted: function() {
@@ -147,6 +180,8 @@ export default {
 
 </script>
 <style scoped>
-
+table {
+    table-layout: fixed;
+}
 
 </style>

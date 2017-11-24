@@ -6,6 +6,8 @@ import router from './router'
 import BootstrapVue from 'bootstrap-vue'
 import firebase from 'firebase'
 import $ from 'jquery'
+import 'bootstrap' 
+import 'bootstrap/dist/js/bootstrap.bundle.js'
 
 Vue.use(BootstrapVue);
 
