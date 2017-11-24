@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import BootstrapVue from 'bootstrap-vue'
 import firebase from 'firebase'
+import $ from 'jquery'
 
 Vue.use(BootstrapVue);
 
@@ -27,5 +28,5 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: { App },
 })
